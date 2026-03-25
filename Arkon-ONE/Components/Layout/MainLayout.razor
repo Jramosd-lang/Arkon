@@ -1,0 +1,19 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <div class="" style="position: fixed; left: 0; top: 0; z-index: 100;">
+        <NavMenu />
+    </div>
+    <div class="" style="position: fixed; top: 0; left: 50px; right: 0; z-index: 100;">
+        <Header_/>
+    </div>
+    <main>
+        <div class="top-row ">
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+        </div>
+
+        <article class="content" style="padding-left: 50px; padding-top: 10px;">
+            @Body
+        </article>
+    </main>
+</div>

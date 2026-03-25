@@ -1,0 +1,41 @@
+nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #97A5BA;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+}
+
+.icon-menu{
+    background-color: transparent;
+    transition: all ease 0.3s;
+    overflow: hidden;
+}
+
+    .icon-menu:hover {
+        background-color: #00000020;
+        color: #004D5E;
+        overflow: inherit;
+    }
+
+.description-icon-menu {
+    position: absolute;
+    left: 48px;
+    color: #94A3B8;
+    opacity: 0;
+    transition: all ease 0.3s;
+    text-align: center;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    padding-inline: 14px;
+    background-color: white;
+    border: 2px solid #00000010;
+}
+
+    .icon-menu:hover .description-icon-menu{
+        left: 58px;
+        opacity: 100%;
+    }

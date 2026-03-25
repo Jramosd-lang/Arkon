@@ -1,0 +1,37 @@
+﻿<div style="background-color: #ffffff; width: 210px; height: 350px; padding: 16px; border-radius: 0.75rem; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);">
+                <div style="aspect-ratio: 1 / 1; border-radius: 0.5rem; overflow: hidden; background-color: #f7f9fb; position: relative;">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAExIpBb7qMem3qzh1SguZHV1X1nSBK7mD2mst8oYC8nsFiQgBY3wrPQzgkB37Y1hPxXnUn5qmck3OqwHWe8DPrw3GKjcF972QxQyHWc-Njgq2nCBloVfYygcr-c-S-RaMNuxtO1Q5e_sAyWL-msN81zJOHvdUdAxym22TRlxdO5Bnnmjg0-LNcQigDkQmNE-lZPJYXpsNQHlhTBo9FBJvCCXG5wO590_0KDPKmHf1kwhYTyKQBFw7zWS28teBVpE49HKGspHLQOn9V" alt="Headphones" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; top: 8px;margin-bottom: 4px; right: 8px; background-color: #ffdad6; color: #ba1a1a; padding: 4px 8px; border-radius: 0.125rem; font-size: 10px; font-weight: 700;">LOW STOCK</div>
+                </div>
+                <div style="display: flex; align-items: flex-start;">
+                    <div>
+                        <p style="font-weight: 600; color: #191c1e;">@Producto_.nombre</p>
+                        <span style="font-size: 0.75rem; color: #3f484d;">@Producto_.descripcion</span>
+                        <p style="font-weight: 700; color: #004d5e;">$@Producto_.precio</p>
+                    </div>
+                </div>
+                <button style="width: 100%; padding: 10px 0; background: linear-gradient(to bottom right, #004d5e, #13677b); color: #ffffff; border-radius: 0.125rem; border: none; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="16" y2="12" /></svg>
+                    <span style="font-size: 0.875rem; font-weight: 600;">Quick Add</span>
+                </button>
+            </div>
+
+
+@code{
+
+    public class Producto()
+    {
+        public string nombre { get; set; }
+        public decimal precio { get; set; }
+        public int stock_producto { get; set; }
+        public string descripcion { get; set; }
+
+    }
+
+    [Parameter]
+    public Producto Producto_ { get; set; }
+
+
+
+    
+}

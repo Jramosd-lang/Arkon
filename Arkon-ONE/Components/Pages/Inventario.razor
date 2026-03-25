@@ -1,0 +1,281 @@
+@page "/inventario"
+
+
+<!-- ── Contenido Principal ── -->
+<main style="min-height: 100vh; background: #f7f9fb; padding: 2rem; font-family: 'Inter', sans-serif;">
+
+    <!-- Encabezado -->
+    <section style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; gap: 1.5rem;">
+        <div>
+            <nav style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                <span style="font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: #3f484d;">ERP Shell</span>
+                <i data-lucide="chevron-right" style="width: 12px; height: 12px; color: #3f484d;"></i>
+                <span style="font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: #004d5e;">Gestión de Inventario</span>
+            </nav>
+            <h1 style="font-size: 2.25rem; font-weight: 800; color: #004d5e; line-height: 1.1; margin: 0 0 0.5rem; font-family: 'Manrope', sans-serif;">Niveles de Stock Actuales</h1>
+            <p style="color: #3f484d; margin: 0; max-width: 32rem; font-size: 0.9rem;">Gestiona tus suministros y componentes en todos los almacenes globales desde una única fuente de verdad.</p>
+        </div>
+        <div style="display: flex; gap: 0.75rem;">
+            <button style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: #e0e3e5; color: #191c1e; font-weight: 600; font-size: 0.875rem; border: none; border-radius: 0.75rem; cursor: pointer; font-family: 'Inter', sans-serif;">
+                <i data-lucide="plus" style="width: 18px; height: 18px;"></i>
+                Agregar Stock
+            </button>
+            <button style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #004d5e, #13677b); color: #fff; font-weight: 700; font-size: 0.875rem; border: none; border-radius: 0.75rem; box-shadow: 0 8px 16px rgba(0,77,94,.2); cursor: pointer; font-family: 'Inter', sans-serif;">
+                <i data-lucide="scan-line" style="width: 18px; height: 18px;"></i>
+                Escanear QR
+            </button>
+        </div>
+    </section>
+
+    <!-- Tarjetas de métricas -->
+    <section style="display: grid; grid-template-columns: 4fr 5fr 3fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+
+        <!-- Total SKUs -->
+        <div style="background: #fff; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,.06);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <span style="font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #3f484d;">Total SKUs</span>
+                <div style="width: 2.5rem; height: 2.5rem; background: #b2ebff; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: #004d5e;">
+                    <i data-lucide="tag" style="width: 18px; height: 18px;"></i>
+                </div>
+            </div>
+            <div style="font-size: 1.875rem; font-weight: 700; color: #004d5e; font-family: 'Manrope', sans-serif;">1,248</div>
+            <div style="font-size: 0.625rem; color: #16a34a; font-weight: 700; margin-top: 4px; display: flex; align-items: center; gap: 4px;">
+                <i data-lucide="trending-up" style="width: 12px; height: 12px;"></i>
+                +12 NUEVOS ARTÍCULOS ESTE MES
+            </div>
+        </div>
+
+        <!-- Salud del Stock -->
+        <div style="background: #fff; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,.06);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <span style="font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #3f484d;">Salud del Stock</span>
+                <div style="width: 2.5rem; height: 2.5rem; background: #ffdad6; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: #ba1a1a;">
+                    <i data-lucide="triangle-alert" style="width: 18px; height: 18px;"></i>
+                </div>
+            </div>
+            <div style="display: flex; align-items: flex-end; gap: 0.75rem;">
+                <div style="font-size: 1.875rem; font-weight: 700; color: #191c1e; font-family: 'Manrope', sans-serif;">94.2%</div>
+                <div style="flex: 1; height: 8px; background: #eceef0; border-radius: 999px; overflow: hidden; margin-bottom: 8px;">
+                    <div style="height: 100%; background: #004d5e; width: 94.2%;"></div>
+                </div>
+            </div>
+            <div style="font-size: 0.625rem; font-weight: 700; text-transform: uppercase; color: #3f484d; margin-top: 4px;">12 artículos sin stock actualmente</div>
+        </div>
+
+        <!-- Almacenamiento -->
+        <div style="background: #13677b; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 8px 24px rgba(19,103,123,.25); position: relative; overflow: hidden;">
+            <div style="position: relative; z-index: 1;">
+                <span style="font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #9ce2fa;">Almacén Usado</span>
+                <div style="font-size: 1.875rem; font-weight: 700; color: #fff; margin-top: 1rem; font-family: 'Manrope', sans-serif;">82%</div>
+                <p style="font-size: 0.625rem; color: #9ce2fa; margin: 0.5rem 0 0; font-weight: 500;">Almacenes A y C alcanzando capacidad</p>
+            </div>
+            <div style="position: absolute; bottom: -1rem; right: -1rem; opacity: .1;">
+                <i data-lucide="warehouse" style="width: 80px; height: 80px; color: #fff;"></i>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Tabla de Inventario -->
+    <section style="background: #f2f4f6; border-radius: 1rem; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06);">
+
+        <!-- Barra de filtros -->
+        <div style="padding: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <button style="padding: 0.5rem 1rem; background: #fff; font-size: 0.75rem; font-weight: 700; color: #004d5e; border-radius: 0.5rem; border: 2px solid rgba(0,77,94,.1); cursor: pointer; font-family: 'Inter', sans-serif;">Todo el Inventario</button>
+                <button style="padding: 0.5rem 1rem; font-size: 0.75rem; font-weight: 700; color: #3f484d; background: none; border: none; cursor: pointer; font-family: 'Inter', sans-serif;">Stock Bajo</button>
+                <button style="padding: 0.5rem 1rem; font-size: 0.75rem; font-weight: 700; color: #3f484d; background: none; border: none; cursor: pointer; font-family: 'Inter', sans-serif;">Materias Primas</button>
+                <button style="padding: 0.5rem 1rem; font-size: 0.75rem; font-weight: 700; color: #3f484d; background: none; border: none; cursor: pointer; font-family: 'Inter', sans-serif;">Productos Terminados</button>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-size: 0.75rem; font-weight: 700; color: #3f484d;">ORDENAR POR</span>
+                <select style="background: transparent; border: none; font-size: 0.75rem; font-weight: 700; color: #004d5e; cursor: pointer; outline: none; font-family: 'Inter', sans-serif;">
+                    <option>Última Actualización</option>
+                    <option>Nivel de Stock (Mayor-Menor)</option>
+                    <option>Nombre (A-Z)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Tabla -->
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; text-align: left; border-collapse: collapse;">
+                <thead>
+                    <tr style="background: rgba(230,232,234,.5);">
+                        <th style="padding: 1rem 1.5rem; font-size: 0.625rem; font-weight: 800; color: #3f484d; text-transform: uppercase; letter-spacing: 0.1em;">Imagen</th>
+                        <th style="padding: 1rem 1.5rem; font-size: 0.625rem; font-weight: 800; color: #3f484d; text-transform: uppercase; letter-spacing: 0.1em;">Nombre</th>
+                        <th style="padding: 1rem 1.5rem; font-size: 0.625rem; font-weight: 800; color: #3f484d; text-transform: uppercase; letter-spacing: 0.1em;">Categoría</th>
+                        <th style="padding: 1rem 1.5rem; font-size: 0.625rem; font-weight: 800; color: #3f484d; text-transform: uppercase; letter-spacing: 0.1em; text-align: center;">Nivel de Stock</th>
+                        <th style="padding: 1rem 1.5rem; font-size: 0.625rem; font-weight: 800; color: #3f484d; text-transform: uppercase; letter-spacing: 0.1em;">Última Actualización</th>
+                        <th style="padding: 1rem 1.5rem; font-size: 0.625rem; font-weight: 800; color: #3f484d; text-transform: uppercase; letter-spacing: 0.1em; text-align: right;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <!-- Fila 1 -->
+                    <tr style="border-top: 1px solid rgba(191,200,205,.15); transition: background .15s;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='transparent'">
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <div style="width: 3rem; height: 3rem; border-radius: 0.5rem; background: #e0e3e5; overflow: hidden;">
+                                <img alt="Viga en I" style="width: 100%; height: 100%; object-fit: cover;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHmJhZbYovfHa-QD0aC1C6XUboXACPUAIwHOmhOSI1IVlxIj3NCm97JgIjc0OJu4iBjAJ-WSzSEdwDP1F-bJWRd21de0P2lEE99R0LOlxc7bK67w8SIxmc0ZJiOXLF7U5-u_DWLOp6cHqmaW0AabOeSvZkQnNNlkXD3nTr82G3UCwQEnvLXghndCO6iWyyzHW6zkIDQ0CRZqiiLveY3RRBFgG8ZAE4SrPz5YGBnzk5n9DMh3qzqfX9HkV2LJsliGDvsA_Np1ZyibNk" />
+                            </div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <div style="font-weight: 700; color: #191c1e; font-family: 'Manrope', sans-serif;">Viga en I Galvanizada X40</div>
+                            <div style="font-size: 0.625rem; color: #3f484d; font-family: monospace;">SKU: ST-GB-X40</div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <span style="display: inline-block; padding: 4px 12px; background: #eceef0; font-size: 0.625rem; font-weight: 700; color: #3f484d; border-radius: 0.375rem;">Estructuras de Acero</span>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem; text-align: center;">
+                            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                                <span style="font-size: 0.875rem; font-weight: 700; color: #004d5e;">452 Unidades</span>
+                                <div style="width: 5rem; height: 6px; background: #eceef0; border-radius: 999px; overflow: hidden;">
+                                    <div style="height: 100%; background: #22c55e; width: 75%;"></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <div style="font-size: 0.75rem; font-weight: 500; color: #191c1e;">12 Oct, 2023</div>
+                            <div style="font-size: 0.625rem; color: #3f484d;">09:42 AM por John D.</div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem; text-align: right;">
+                            <button style="padding: 0.5rem; color: #3f484d; background: none; border: none; cursor: pointer; border-radius: 0.375rem;">
+                                <i data-lucide="pencil" style="width: 16px; height: 16px;"></i>
+                            </button>
+                            <button style="padding: 0.5rem; color: #3f484d; background: none; border: none; cursor: pointer; border-radius: 0.375rem;">
+                                <i data-lucide="history" style="width: 16px; height: 16px;"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Fila 2 — Stock bajo -->
+                    <tr style="border-top: 1px solid rgba(191,200,205,.15); background: rgba(255,255,255,.4); transition: background .15s;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='rgba(255,255,255,.4)'">
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <div style="width: 3rem; height: 3rem; border-radius: 0.5rem; background: #e0e3e5; overflow: hidden;">
+                                <img alt="Baldosas" style="width: 100%; height: 100%; object-fit: cover;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0zWGrEpMQROUdMEqe6CKHRvBJQBhzUygbujajP3LlJT2LDpP1R_N1qtbiDLhLsecCyXFtgDmLFbmXHWzf7aaOogIOfyRaiWVcs1BCLB3Fapf8hCiMzkB1MEeOxgtsIQ5LN0A6E0OPddRk9SD2cp4j_XhvKJmsxjzpllEK0KzWV3XEuEyN1vyNY1n0MWPb-IPEM89LjD2wGrcmRBUHK0V-SzfgKaY03MXueKazW_STDfkSTxluSv7Mtj3eNl3wcL6evSPjwGMTAqeO" />
+                            </div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <div style="font-weight: 700; color: #191c1e; font-family: 'Manrope', sans-serif;">Baldosa de Porcelana Gris Mate</div>
+                            <div style="font-size: 0.625rem; color: #3f484d; font-family: monospace;">SKU: TL-MG-PORC</div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <span style="display: inline-block; padding: 4px 12px; background: #eceef0; font-size: 0.625rem; font-weight: 700; color: #3f484d; border-radius: 0.375rem;">Acabados</span>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem; text-align: center;">
+                            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                                <span style="font-size: 0.875rem; font-weight: 700; color: #ba1a1a;">12 Paquetes</span>
+                                <div style="width: 5rem; height: 6px; background: #eceef0; border-radius: 999px; overflow: hidden;">
+                                    <div style="height: 100%; background: #ba1a1a; width: 15%;"></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <div style="font-size: 0.75rem; font-weight: 500; color: #191c1e;">14 Oct, 2023</div>
+                            <div style="font-size: 0.625rem; color: #3f484d;">02:15 PM por Sarah L.</div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem; text-align: right;">
+                            <button style="padding: 4px 12px; background: #004d5e; color: #fff; font-size: 0.625rem; font-weight: 700; border: none; border-radius: 0.5rem; cursor: pointer; font-family: 'Inter', sans-serif;">PEDIR AHORA</button>
+                        </td>
+                    </tr>
+
+                    <!-- Fila 3 -->
+                    <tr style="border-top: 1px solid rgba(191,200,205,.15); transition: background .15s;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='transparent'">
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <div style="width: 3rem; height: 3rem; border-radius: 0.5rem; background: #e0e3e5; overflow: hidden;">
+                                <img alt="Cables" style="width: 100%; height: 100%; object-fit: cover;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk-OqQpbep8_ojmR76jIAFO9lo08S4SJhnYb065Eenq55oW3qek6jvahUp35iniZLYy2WhQ8tc_rfQbIhKz2XMd94oIDMIkw6lrXgYTu7C_WAtdc7Gon4hs75w0-az5g3FGFZq8s7gIVjPQ468GukUDHUsONqFz4mIuVDhHr99P-jajbEJqwfFj4Pvy1SI8--K-8azjtPEGzmMA5MALA6R5MOu6xK80nDlfkmlqem6lFfRbQXrmzQGirfxCtS7CBMIc_oOD_jZAWhW" />
+                            </div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <div style="font-weight: 700; color: #191c1e; font-family: 'Manrope', sans-serif;">Cable de Cobre 2.5mm</div>
+                            <div style="font-size: 0.625rem; color: #3f484d; font-family: monospace;">SKU: EL-CC-25MM</div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <span style="display: inline-block; padding: 4px 12px; background: #eceef0; font-size: 0.625rem; font-weight: 700; color: #3f484d; border-radius: 0.375rem;">Eléctrico</span>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem; text-align: center;">
+                            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                                <span style="font-size: 0.875rem; font-weight: 700; color: #004d5e;">82 Rollos</span>
+                                <div style="width: 5rem; height: 6px; background: #eceef0; border-radius: 999px; overflow: hidden;">
+                                    <div style="height: 100%; background: #13677b; width: 50%;"></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <div style="font-size: 0.75rem; font-weight: 500; color: #191c1e;">13 Oct, 2023</div>
+                            <div style="font-size: 0.625rem; color: #3f484d;">11:00 AM por System Bot</div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem; text-align: right;">
+                            <button style="padding: 0.5rem; color: #3f484d; background: none; border: none; cursor: pointer; border-radius: 0.375rem;">
+                                <i data-lucide="pencil" style="width: 16px; height: 16px;"></i>
+                            </button>
+                            <button style="padding: 0.5rem; color: #3f484d; background: none; border: none; cursor: pointer; border-radius: 0.375rem;">
+                                <i data-lucide="history" style="width: 16px; height: 16px;"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Fila 4 -->
+                    <tr style="border-top: 1px solid rgba(191,200,205,.15); transition: background .15s;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='transparent'">
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <div style="width: 3rem; height: 3rem; border-radius: 0.5rem; background: #e0e3e5; overflow: hidden;">
+                                <img alt="Concreto" style="width: 100%; height: 100%; object-fit: cover;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkjg8akn7dZ5fKvxXldCOhoYnyuItir-TiKZtec3LC5ROuUcKRsA0c7Fkaw2AVyxEFIBNco8RYRz1uOtub9L5anP26yRtzPOq1AiNY5VVegXV9I4frTiGnIzXPiOftb58hIRxxSlOdiOtnitKNQVJkDgdrWciaS5dvqXvahKvtL97z6eos_8SYFFkDID4vmiUCZDcbJA_s3hYjXqw4a0RuAEkeeNIuwF0VPJUTzH7FMxcJPLAYSfTD18FhzWmtWjPzIeIIE2h2VgX8" />
+                            </div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <div style="font-weight: 700; color: #191c1e; font-family: 'Manrope', sans-serif;">Concreto Alta Resistencia 50kg</div>
+                            <div style="font-size: 0.625rem; color: #3f484d; font-family: monospace;">SKU: CN-HS-50KG</div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <span style="display: inline-block; padding: 4px 12px; background: #eceef0; font-size: 0.625rem; font-weight: 700; color: #3f484d; border-radius: 0.375rem;">Materia Prima</span>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem; text-align: center;">
+                            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                                <span style="font-size: 0.875rem; font-weight: 700; color: #004d5e;">2,100 Bolsas</span>
+                                <div style="width: 5rem; height: 6px; background: #eceef0; border-radius: 999px; overflow: hidden;">
+                                    <div style="height: 100%; background: #22c55e; width: 90%;"></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem;">
+                            <div style="font-size: 0.75rem; font-weight: 500; color: #191c1e;">14 Oct, 2023</div>
+                            <div style="font-size: 0.625rem; color: #3f484d;">08:30 AM por Marcus V.</div>
+                        </td>
+                        <td style="padding: 1.25rem 1.5rem; text-align: right;">
+                            <button style="padding: 0.5rem; color: #3f484d; background: none; border: none; cursor: pointer; border-radius: 0.375rem;">
+                                <i data-lucide="pencil" style="width: 16px; height: 16px;"></i>
+                            </button>
+                            <button style="padding: 0.5rem; color: #3f484d; background: none; border: none; cursor: pointer; border-radius: 0.375rem;">
+                                <i data-lucide="history" style="width: 16px; height: 16px;"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pie de tabla / Paginación -->
+        <div style="padding: 1.5rem; border-top: 1px solid rgba(191,200,205,.1); display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #3f484d;">Mostrando 1-10 de 1,248 artículos</span>
+            <div style="display: flex; gap: 0.5rem;">
+                <button style="width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; border-radius: 0.25rem; background: #e0e3e5; border: none; cursor: pointer; color: #3f484d;">
+                    <i data-lucide="chevron-left" style="width: 14px; height: 14px;"></i>
+                </button>
+                <button style="width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; border-radius: 0.25rem; background: #004d5e; border: none; cursor: pointer; color: #fff; font-size: 0.75rem; font-weight: 700;">1</button>
+                <button style="width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; border-radius: 0.25rem; background: #e0e3e5; border: none; cursor: pointer; color: #3f484d; font-size: 0.75rem; font-weight: 700;">2</button>
+                <button style="width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; border-radius: 0.25rem; background: #e0e3e5; border: none; cursor: pointer; color: #3f484d; font-size: 0.75rem; font-weight: 700;">3</button>
+                <button style="width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; border-radius: 0.25rem; background: #e0e3e5; border: none; cursor: pointer; color: #3f484d;">
+                    <i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i>
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FAB -->
+<button style="position: fixed; bottom: 2rem; right: 2rem; width: 3.5rem; height: 3.5rem; background: #004d5e; color: #fff; border-radius: 50%; border: none; box-shadow: 0 8px 24px rgba(0,77,94,.3); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 50; transition: transform .2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <i data-lucide="message-circle" style="width: 22px; height: 22px;"></i>
+</button>
