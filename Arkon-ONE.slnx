@@ -1,6 +1,6 @@
 <Solution>
   <Project Path="AccesoDatos/AccesoDatos.csproj" />
-  <Project Path="Arkon-ONE/Arkon-ONE.csproj" />
+  <Project Path="Arkon-ONE/GUI.csproj" />
   <Project Path="Entidades/Entidades.csproj" />
   <Project Path="LogicaNegocio/LogicaNegocio.csproj" />
 </Solution>
